@@ -1,0 +1,21 @@
+<% include ./partials/header %>
+<div class="container">
+    <div class="row">
+        <% receivers.forEach((receiver)=>{ %>
+        <div class="col-md-4">
+            <div class="card border-success mb-3" style="max-width: 18rem;">
+                <div class="card-header"><%= receiver.rbgp.toUpperCase()%></div>
+                <div class="card-body text-success">
+                    <h5 class="card-title"><%= receiver.description.toUpperCase()%></h5>
+                    <p class="card-text"><%= receiver.user.username.toUpperCase()%></p>
+                    <p class="card-text">Contact:<%= receiver.mobile%></p>
+                    <p class="card-text">Required Within:<%= receiver.valid%></p>
+                </div>
+            </div>
+        </div>
+        <%})%>
+
+    </div>
+</div>
+
+<% include ./partials/footer %>

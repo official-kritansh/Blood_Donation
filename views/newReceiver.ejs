@@ -1,0 +1,13 @@
+<% include ./partials/header %>
+<form action="/receiver/<%= userid %>" id="f1" method="POST">
+    <label for="Bgp">Blood Group</label>
+    <input id="Bgp" type="text" placeholder="Blood Group" name="Bgp">
+    <label for="Cd">Contact Details of Patient</label>
+    <input id="Cd" type="tel" pattern="[0-9]{10}"" placeholder="Contact Details" name="cd">
+    <label for="valid">Blood Needed Within</label>
+    <input id="valid" type="date"  name="valid">
+    <button class="btn btn-secondary btn sm">Submit</button>
+</form>
+<label for="valid">Describtion</label>
+<textarea name="desc" id="desc" form="f1" cols="30" rows="5">Describe</textarea>
+<% include ./partials/footer %>
