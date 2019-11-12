@@ -7,6 +7,8 @@ var express = require("express"),
     User = require("./models/user"),
     Donar = require("./models/donar"),
     Receiver = require("./models/receiver"),
+    port=process.env.PORT||8000,
+    dotenv=require('dotenv'),
     mongoose = require("mongoose");
 
 app.use(require("express-session")({
@@ -30,8 +32,8 @@ passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
-mongoose.connect("mongodb://localhost/blood_donation");
+dotenv.config();
+mongoose.connect("mongodb+srv://"+process.env.MLAB_USER+":"+process.env.MLAB_PASS+"@cluster0-kw5s2.mongodb.net/etPro?retryWrites=true&w=majority");
 app.use(function(req,res,next){
     res.locals.currentUser =req.user;
     next();
@@ -172,6 +174,6 @@ function isLoggedIn(req, res, next) {
     res.redirect("/login");
 }
 
-app.listen(4000, function () {
-    console.log("server started");
+app.listen(port, function () {
+    console.log("server started at:"+port);
 });
