@@ -102,12 +102,14 @@ app.get("/logout", function (req, res) {
 
 //@routes For Donation and receiveing blood
 app.get("/donar/:userid",isLoggedIn,(req,res)=>{
-    Donar.find({user:req.user},(err,donar)=>{
+    Donar.findOne({user:{id:mongoose.Types.ObjectId(req.user._id),
+          username:req.user.username}},(err,donar)=>{
         if(err){
             res.send(err);
         }
         else{
-            if(donar){
+            console.log(donar.bgp);
+            if(donar.bgp!=null){
                 
                 res.redirect('/blood/'+req.user._id);
             }
