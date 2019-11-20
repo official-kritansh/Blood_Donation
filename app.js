@@ -167,6 +167,31 @@ app.post("/receiver/:userid",(req,res)=>{
             res.redirect('/blood/'+req.user._id);
         }
     })
+});
+app.get("/requests/:userid",isLoggedIn,(req,res)=>{
+    Donar.findOne({user:{id:mongoose.Types.ObjectId(req.user._id),
+        username:req.user.username}},(err,donar)=>{
+            if(err){
+                res.send(err);
+            }else{
+                if(donar!=null){
+                    Receiver.find({rbgp:donar.bgp},(err,receivers)=>{
+                        if(err){
+                            console.log(err);
+                        }
+                        else{
+                            res.render("request",{userid:req.params.userid,receivers:receivers});
+                        }
+                    })
+                }
+                else{
+                    res.render("request",{userid:req.params.userid,receivers:false});
+
+                }
+               
+            }
+        })
+    
 })
 
 function isLoggedIn(req, res, next) {
