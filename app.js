@@ -33,7 +33,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 dotenv.config();
-mongoose.connect("mongodb+srv://"+process.env.MLAB_USER+":"+process.env.MLAB_PASS+"@cluster0-kw5s2.mongodb.net/bDonation?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://"+process.env.MLAB_USER+":"+process.env.MLAB_PASS+"@cluster0-kw5s2.mongodb.net/bDonation_v1?retryWrites=true&w=majority");
 app.use(function(req,res,next){
     res.locals.currentUser =req.user;
     next();
@@ -109,7 +109,7 @@ app.get("/donar/:userid",isLoggedIn,(req,res)=>{
         }
         else{
             // console.log(donar.bgp);
-            if(donar.bgp!=null){
+            if(donar!=null){
                 
                 res.redirect('/blood/'+req.user._id);
             }
