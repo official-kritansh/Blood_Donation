@@ -108,7 +108,7 @@ app.get("/donar/:userid",isLoggedIn,(req,res)=>{
             res.send(err);
         }
         else{
-            console.log(donar.bgp);
+            // console.log(donar.bgp);
             if(donar.bgp!=null){
                 
                 res.redirect('/blood/'+req.user._id);
