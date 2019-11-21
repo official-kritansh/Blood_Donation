@@ -1,5 +1,7 @@
 <% include ./partials/header %>
-<form action="/receiver/<%= userid %>" id="f1" method="POST">
+
+<link rel="stylesheet" type="text/css" href="../stylesheets/userForm.css">
+<!-- <form action="/receiver/<%= userid %>" id="f1" method="POST">
     <label for="Bgp">Blood Group</label>
     <input id="Bgp" type="text" placeholder="Blood Group" name="Bgp">
     <label for="Cd">Contact Details of Patient</label>
@@ -8,6 +10,34 @@
     <input id="valid" type="date"  name="valid">
     <button class="btn btn-secondary btn sm">Submit</button>
 </form>
-<label for="valid">Describtion</label>
-<textarea name="desc" id="desc" form="f1" cols="30" rows="5">Describe</textarea>
+<label for="valid">Describtion</label> -->
+<!-- <textarea name="desc" id="desc" form="f1" cols="30" rows="5">Describe</textarea> -->
+<div class="center1 round">
+        <h1 class="text-center head"> ENTER DETAILS </h1>
+        <div class="container ">
+      <form action="/receiver/<%= userid %>" id="f1" method="POST">
+        <div class="container fcenter">
+        <div class="form-group  ">
+         
+          <label for= "ip1" class="user text-danger">Blood Group</label>
+          <input type="text" id= "ip1" class="form-control"   placeholder="Blood Group" name="Bgp">
+        </div>
+          
+        <div class="form-group">
+          <label for= "ip2" class="user text-danger">Mobile</label>
+          <input id="ip2"  class="form-control" type="tel" pattern="[0-9]{10}" placeholder="Contact Details" name="cd">
+        </div>
+        <div class="form-group">
+                <label for= "ip3" class="user text-danger">Needed Within</label>
+                <input id="ip3"  class="form-control" type="date"  placeholder="Date" name="valid">
+              </div>
+              <div class="form-group">
+                    <label for= "ip4" class="user text-danger">Describe</label>
+                    <textarea id="ip4" form="f1" class="form-control" cols="30" rows="5"  name="desc">Describe</textarea>
+                  </div>
+        <button type="submit" class="btn new">Submit</button>
+      </div>
+      </form>
+    </div>
+    </div>
 <% include ./partials/footer %>

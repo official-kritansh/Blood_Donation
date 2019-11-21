@@ -1,30 +1,27 @@
 <% include ./partials/header %>
-<!-- <h1>Register</h1>
-<form action="/register" method="POST">
+<link rel="stylesheet" type="text/css" href="../stylesheets/userForm.css">
+<!-- <h1>Login</h1>
+<form action="/login" method="POST">
     <input type="text" name="username" placeholder="username">
     <input type="text" name="password" placeholder="password">
     <input type="submit" value="Login">
 </form> -->
-<link rel="stylesheet" type="text/css" href="../stylesheets/userForm.css">
-<div class="center">
+<div class="center round">
+  <h1 class="text-center head"> REGISTER </h1>
     <div class="container ">
   <form action="/register" method="POST">
     <div class="container fcenter">
     <div class="form-group  ">
      
-      
-      <input type="text" class="form-control"   placeholder="username" name="username">
+      <label for= "ip1" class="user text-danger">USERNAME</label>
+      <input type="text" id= "ip1" class="form-control"   placeholder="username" name="username">
     </div>
       
     <div class="form-group">
-     
+      <label for= "ip1" class="user text-danger">PASSWORD</label>
       <input type="password" class="form-control" name="password" placeholder="Password">
     </div>
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn new">Submit</button>
   </div>
   </form>
 </div>

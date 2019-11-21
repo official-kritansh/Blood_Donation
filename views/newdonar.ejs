@@ -1,7 +1,23 @@
 <% include ./partials/header %>
-<form action="/donar/<%= userid %>" method="POST">
+<link rel="stylesheet" type="text/css" href="../stylesheets/userForm.css">
+<!-- <form action="/donar/<%= userid %>" method="POST">
     <label for="Bgp">Blood Group</label>
     <input id="Bgp" type="text" placeholder="Blood Group" name="Bgp">
     <button class="btn btn-secondary btn sm">Submit</button>
-</form>
+</form> -->
+<div class="center round">
+    <h1 class="text-center head"> Enter Details </h1>
+    <div class="container ">
+  <form action="/donar/<%= userid %>" method="POST">
+    <div class="container fcenter">
+    <div class="form-group  ">
+     
+      <label for= "ip1" class="user text-danger">Blood Group</label>
+      <input type="text" id= "ip1" class="form-control"   placeholder="Blood Group" name="Bgp">
+    </div>
+    <button type="submit" class="btn new">Submit</button>
+  </div>
+  </form>
+</div>
+</div>
 <% include ./partials/footer %>
