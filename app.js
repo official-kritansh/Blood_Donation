@@ -34,7 +34,8 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 dotenv.config();
-mongoose.connect("mongodb+srv://"+process.env.MLAB_USER+":"+process.env.MLAB_PASS+"@cluster0-kw5s2.mongodb.net/bDonation_v1?retryWrites=true&w=majority");
+// mongoose.connect("mongodb+srv://"+process.env.MLAB_USER+":"+process.env.MLAB_PASS+"@cluster0-kw5s2.mongodb.net/bDonation_v1?retryWrites=true&w=majority");
+mongoose.connect("mongodb://localhost/bDonation")
 app.use(function(req,res,next){
     res.locals.currentUser =req.user;
     next();
